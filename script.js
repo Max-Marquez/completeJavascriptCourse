@@ -354,7 +354,7 @@ yearsUntilRetirement(1969, "Jane");
 
 /**********
  * Function Statements and Expressions
- */
+ 
 //
 // function whatDoYouDo(job, firstName) {}
 
@@ -375,3 +375,61 @@ var whatDoYouDo = function(job, firstName) {
 console.log(whatDoYouDo("teacher", "John"));
 console.log(whatDoYouDo("designer", "Jane"));
 console.log(whatDoYouDo("retired", "Mike"));
+*/
+
+/*********
+ * Arrays
+ */
+/*
+// Initialize new array
+var names = ["John", "Mark", "Jane"];
+var years = new Array(1990, 1969, 1948);
+
+console.log(names[2]);
+console.log(names.length);
+
+// Mutate array data
+names[1] = "Ben";
+names[names.length] = "Mary";
+console.log(names);
+
+// Different data types
+var john = ["John", "Smith", 1990, "designer", false];
+
+john.push("blue");
+john.unshift("Mr.");
+console.log(john);
+
+john.pop();
+john.pop();
+john.shift();
+console.log(john);
+
+console.log(john.indexOf(1990));
+
+var isDesigner =
+  john.indexOf("designer") === -1
+    ? "John is NOT a designer"
+    : "John IS a designer";
+console.log(isDesigner);
+*/
+
+/*********
+ * CODING CHALLENGE 2
+ */
+
+var bill = [124, 48, 268];
+var tips = [];
+
+var tipCalc = function(bill) {
+  if (bill < 50) {
+    bill = bill * (20 / 100);
+    tips.push(bill);
+  } else if (bill >= 50 && bill <= 200) {
+    return bill * (15 / 100);
+  } else if (bill > 200) {
+    return bill * (10 / 100);
+  }
+};
+
+console.log(tips);
