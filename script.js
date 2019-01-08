@@ -534,3 +534,81 @@ if (john.calcBmi() < mark.calcBmi()) {
 /******************
  * Loops and iteration
  */
+/*
+// For loop
+for (var i = 0; i < 10; i++) {
+  console.log(i);
+}
+*/
+// i = 0, 0 < 10 true, log i to console, i++
+// i = 1, 1 < 10 true, log i to console, i++
+// ...
+// i = 9, 9 < 10 true, log i to console, i++
+// i = 10, 10 < 10 FALSE, exit the loop!
+
+/*
+var john = ["John", "Smith", 1990, "designer", false];
+
+for (var i = 0; i < john.length; i++) {
+  console.log(john[i]);
+}
+
+// While loop
+var i = 0;
+while (i < john.length) {
+  console.log(john[i]);
+  i++;
+}
+*/
+
+// continue and break statements
+/*
+var john = ["John", "Smith", 1990, "designer", false, "blue"];
+
+for (var i = 0; i < john.length; i++) {
+  if (typeof john[i] !== "string") continue;
+  console.log(john[i]);
+}
+
+for (var i = 0; i < john.length; i++) {
+  if (typeof john[i] !== "string") break;
+  console.log(john[i]);
+}
+
+// Looping backwards
+
+for (var i = john.length - 1; i >= 0; i--) {
+  console.log(john[i]);
+}
+*/
+
+/**********************
+ * CODING CHALLENGE 5
+ */
+
+var john = {
+  fullName: "John Smith",
+  bills: [124, 48, 268, 180, 42],
+  tipCalc: function() {
+    this.tips = [];
+    this.finalValues = [];
+    for (var i = 0; i < this.bills.length; i++) {
+      // Determine percentage based on tipping rules
+      var percentage;
+      var bill = this.bills[i];
+      if (bill < 50) {
+        percentage = 0.2;
+      } else if (bill >= 50 && bill < 200) {
+        percentage = 0.15;
+      } else {
+        percentage = 0.1;
+      }
+      // Add results to corresponding arrays
+      this.tips[i] = bill * percentage;
+      this.finalValues[i] = bill + bill * percentage;
+    }
+  }
+};
+
+john.tipCalc();
+console.log(john);
